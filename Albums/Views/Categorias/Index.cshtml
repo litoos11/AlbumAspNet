@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Albums.Models.Categoria>
+
+@{
+    ViewBag.Title = "Album's";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Crear Nuevo", "Create", new { @class = "btn btn-success" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </th>
+        <th class="hidden-sm  hidden-xs">
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombre)
+        </td>
+        <td class="hidden-sm  hidden-xs">
+            @Html.DisplayFor(modelItem => item.Descripcion)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.Id }, new { @class = "btn btn-warning" }) |
+            @Html.ActionLink("Ver", "Details", new { id=item.Id }, new { @class = "btn btn-success" }) |
+            @Html.ActionLink("Borrar", "Delete", new { id=item.Id }, new { @class = "btn btn-danger" })
+        </td>
+    </tr>
+}
+
+</table>

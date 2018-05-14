@@ -1,0 +1,30 @@
+﻿@model IEnumerable<Albums.Models.Categoria>
+
+@{
+    ViewBag.Title = "Home Page";
+}s
+
+@*<div class="jumbotron">
+    <h1>ALBUM'S</h1>
+</div>*@
+
+<div class="row">
+    @foreach (var i in Model) {
+
+        <div class="col-md-3 col-sm-6 col-xs-12 cuadricula">
+            <h3>
+                @Html.DisplayFor(modeli => i.Nombre)
+            </h3>  
+            <p>@Html.DisplayFor(modeli => i.Nombre)</p>
+            <div class="col-xs-12 text-center">
+                <img src="~/Uploads/Img/@Html.DisplayFor(modeli => i.FilePaths.Select(x => x.Nombre))" alt="Alternate Text" width="100%" height="140px"/>
+            </div>   
+            
+            <hr />
+            <p>
+                @Html.DisplayFor(nodeli => i.Descripcion)
+            </p>
+        </div>
+    }
+
+</div>

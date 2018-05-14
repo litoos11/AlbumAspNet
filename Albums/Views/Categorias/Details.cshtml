@@ -1,0 +1,40 @@
+﻿@model Albums.Models.Categoria
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>@Html.DisplayFor(model => model.Nombre)</h4>
+    <hr />
+    @*<dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>      
+
+    </dl>*@
+</div>
+
+<div class="row">
+    @foreach (var i in Model.FilePaths) {
+
+        <div class="col-md-3 col-sm-6 col-xs-12 cuadricula">            
+            @*<p>@Html.DisplayFor(modeli => i.Nombre)</p>*@
+            <div class="col-xs-12 text-center">
+                <img src="~/Uploads/Img/@Html.DisplayFor(modeli => i.Nombre)" alt="Alternate Text" width="100%" height="140px" />
+            </div>
+        </div>
+    }
+
+</div>
+
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
