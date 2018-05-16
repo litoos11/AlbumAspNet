@@ -89,7 +89,8 @@ namespace Albums.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Categoria categoria = await db.Categorias.FindAsync(id);
+            //Categoria categoria = await db.Categorias.FindAsync(id);
+            Categoria categoria = await db.Categorias.Include(x => x.FilePaths).SingleOrDefaultAsync(x => x.Id == id);
             if (categoria == null)
             {
                 return HttpNotFound();

@@ -213,7 +213,6 @@
     <Folder Include="Resources\files\" />
     <Folder Include="Resources\fonts\" />
     <Folder Include="Resources\imgs\" />
-    <Folder Include="Uploads\Background\" />
     <Folder Include="Uploads\Img\" />
   </ItemGroup>
   <ItemGroup>

@@ -110,12 +110,12 @@ h1 {
         border-radius: .5rem;
     }
 
-dt{
+dt.about{
     text-indent: 4rem;
-    /*color:red;*/
+    color: lightslategray;
 }
 
-    dt::first-letter{
+    dt.about::first-letter{
         font-size: 3rem;
         line-height: 1rem;
     }
